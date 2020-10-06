@@ -22,6 +22,13 @@ public class UserReg {
         return Pattern.matches("[0-9]{2}\\s[0-9]{10}", number);
     }
 
+    /* UC5 -- Validate Password
+     * Rule 1. Minimum 8 characters
+     * */
+    private boolean validatePassword(String password) {
+        return Pattern.matches("[^.]{8,}", password);
+    }
+
     public static void main(String[] args) {
         System.out.println("Welcome to the User Registration Program");
         System.out.println("Enter the first name: ");
@@ -32,10 +39,15 @@ public class UserReg {
         String email = sc.next(); sc.nextLine();
         System.out.println("Enter the Mobile Number: ");
         String number = sc.nextLine();
+        System.out.println("Enter the Password: ");
+        String password = sc.next();
 
         UserReg userReg = new UserReg();
         System.out.println(userReg.validateName(firstName));
         System.out.println(userReg.validateName(lastName));
+        System.out.println(userReg.validateEmail(email));
+        System.out.println(userReg.validateMobile(number));
+        System.out.println(userReg.validatePassword(password));
 
     }
 }
