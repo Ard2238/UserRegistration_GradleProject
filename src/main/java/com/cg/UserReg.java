@@ -17,6 +17,11 @@ public class UserReg {
         return Pattern.matches("[a-z]+(.[a-z]+)*@{1}[a-z]+(.co){1}(.[a-z]+)*", email);
     }
 
+    /*UC4 -- Validate Mobile Number */
+    private boolean validateMobile(String number) {
+        return Pattern.matches("[0-9]{2}\\s[0-9]{10}", number);
+    }
+
     public static void main(String[] args) {
         System.out.println("Welcome to the User Registration Program");
         System.out.println("Enter the first name: ");
@@ -25,6 +30,8 @@ public class UserReg {
         String lastName = sc.next();
         System.out.println("Enter the email: ");
         String email = sc.next(); sc.nextLine();
+        System.out.println("Enter the Mobile Number: ");
+        String number = sc.nextLine();
 
         UserReg userReg = new UserReg();
         System.out.println(userReg.validateName(firstName));
