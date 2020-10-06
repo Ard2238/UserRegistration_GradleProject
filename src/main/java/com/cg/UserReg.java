@@ -7,6 +7,33 @@ import java.util.regex.Pattern;
 public class UserReg {
     private static Scanner sc = new Scanner(System.in);
 
+    private String firstName, lastName,email,number,password;
+    public UserReg(String firstName, String lastName, String email, String number, String password) {
+        super();
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.number = number;
+        this.password = password;
+    }
+
+    private void initializeDetails() {
+        boolean checkFName = validateName(firstName);
+        boolean checkLName = validateName(lastName);
+        boolean checkEMail = validateEmail(email);
+        boolean checkMobile = validateMobile(number);
+        boolean checkPass = validatePassword(password);
+        System.out.println(checkFName? "Valid First Name." : "Invalid First Name.");
+        System.out.println(checkLName? "Valid Last Name." : "Invalid Last Name.");
+        System.out.println(checkEMail? "Valid Email." : "Invalid Email.");
+        System.out.println(checkMobile? "Valid Mobile Number" : "Invalid Mobile Number");
+        System.out.println(checkPass? "Valid Password." : "Invalid Password.");
+        if( checkFName && checkLName && checkEMail && checkMobile && checkPass)
+            System.out.println("User Registered Successfully.");
+        else
+            System.out.println("One or more fields are incorrect. Registration Unsuccessful.");
+    }
+
     /* UC1 -- Validate First Name */
     /* UC2 -- Validate Last Name */
     private boolean validateName(String firstName) {
@@ -15,7 +42,7 @@ public class UserReg {
 
     /* UC3 -- Validate Email */
     private boolean validateEmail(String email) {
-        return Pattern.matches("[a-z]+(.[a-z]+)*@{1}[a-z]+(.co){1}(.[a-z]+)*", email);
+        return Pattern.matches("[a-z]+(.[a-z0-9]+)*@{1}[a-z0-9]+[.][a-z]{2,}(.[a-z]+)*", email);
     }
 
     /*UC4 -- Validate Mobile Number */
@@ -58,12 +85,9 @@ public class UserReg {
         System.out.println("Enter the Password: ");
         String password = sc.next();
 
-        UserReg userReg = new UserReg();
-        System.out.println(userReg.validateName(firstName));
-        System.out.println(userReg.validateName(lastName));
-        System.out.println(userReg.validateEmail(email));
-        System.out.println(userReg.validateMobile(number));
-        System.out.println(userReg.validatePassword(password));
+        UserReg userReg = new UserReg(firstName, lastName, email, number, password);
+        userReg.initializeDetails();
+        sc.close();
 
     }
 }
