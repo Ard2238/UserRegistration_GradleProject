@@ -1,6 +1,7 @@
 package com.cg;
 
 import java.util.Scanner;
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class UserReg {
@@ -24,9 +25,24 @@ public class UserReg {
 
     /* UC5 -- Validate Password
      * Rule 1. Minimum 8 characters
+     * Rule 2. At least one Upper Case character
+     * Rule 3. At least one numeric character
+     * Rule 4. Exactly one special character
      * */
     private boolean validatePassword(String password) {
-        return Pattern.matches("(?=.*\\d)(?=.*[A-Z]).{8,}", password);
+        if(Pattern.matches("(?=.*\\d)(?=.*[A-Z])(?=.*[\\S]).{8,}", password)){
+            String splchar = "[\\W]";
+            Pattern pat = Pattern.compile(splchar);
+            Matcher mat = pat.matcher(password);
+            int count = 0;
+            while(mat.find()) {count++ ; }
+            if(count == 1) {
+                System.out.println("Valid Password");
+                return true;
+            }
+        }
+        System.out.println("Invalid Password.");
+        return false;
     }
 
     public static void main(String[] args) {
