@@ -17,7 +17,7 @@ public class UserReg {
         this.password = password;
     }
 
-    private void initializeDetails() {
+    public void initializeDetails() {
         boolean checkFName = validateName(firstName);
         boolean checkLName = validateName(lastName);
         boolean checkEMail = validateEmail(email);
@@ -36,17 +36,17 @@ public class UserReg {
 
     /* UC1 -- Validate First Name */
     /* UC2 -- Validate Last Name */
-    private boolean validateName(String firstName) {
-        return Pattern.matches("[A-Z][a-z]{2,}", firstName);
+    public boolean validateName(String Name) {
+        return Pattern.matches("[A-Z][a-z]{2,}", Name);
     }
 
     /* UC3 -- Validate Email */
-    private boolean validateEmail(String email) {
+    public boolean validateEmail(String email) {
         return Pattern.matches("[a-z]+(.[a-z0-9]+)*@{1}[a-z0-9]+[.][a-z]{2,}(.[a-z]+)*", email);
     }
 
     /*UC4 -- Validate Mobile Number */
-    private boolean validateMobile(String number) {
+    public boolean validateMobile(String number) {
         return Pattern.matches("[0-9]{2}\\s[0-9]{10}", number);
     }
 
@@ -56,7 +56,7 @@ public class UserReg {
      * Rule 3. At least one numeric character
      * Rule 4. Exactly one special character
      * */
-    private boolean validatePassword(String password) {
+    public boolean validatePassword(String password) {
         if(Pattern.matches("(?=.*\\d)(?=.*[A-Z])(?=.*[\\S]).{8,}", password)){
             String splchar = "[\\W]";
             Pattern pat = Pattern.compile(splchar);
