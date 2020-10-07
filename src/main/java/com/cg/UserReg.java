@@ -17,7 +17,7 @@ public class UserReg {
         this.password = password;
     }
 
-    public void initializeDetails() {
+    public boolean initializeDetails() {
         boolean checkFName = validateName(firstName);
         boolean checkLName = validateName(lastName);
         boolean checkEMail = validateEmail(email);
@@ -28,10 +28,14 @@ public class UserReg {
         System.out.println(checkEMail? "Valid Email." : "Invalid Email.");
         System.out.println(checkMobile? "Valid Mobile Number" : "Invalid Mobile Number");
         System.out.println(checkPass? "Valid Password." : "Invalid Password.");
-        if( checkFName && checkLName && checkEMail && checkMobile && checkPass)
+        if( checkFName && checkLName && checkEMail && checkMobile && checkPass) {
             System.out.println("User Registered Successfully.");
-        else
+            return true;
+        }
+        else {
             System.out.println("One or more fields are incorrect. Registration Unsuccessful.");
+            return false;
+        }
     }
 
     /* UC1 -- Validate First Name */
@@ -42,7 +46,7 @@ public class UserReg {
 
     /* UC3 -- Validate Email */
     public boolean validateEmail(String email) {
-        return Pattern.matches("[a-z]+(.[a-z0-9]+)*@{1}[a-z0-9]+[.][a-z]{2,}(.[a-z]+)*", email);
+        return Pattern.matches("[a-z]+([.][a-zA-Z0-9]+)*([_][a-zA-Z0-9]+)*([\\-][a-zA-Z0-9]+)*([0-9]+)*[@][a-zA-Z0-9]+[.][a-zA-Z]{2,}([.][A_Za-z]{2,})?", email);
     }
 
     /*UC4 -- Validate Mobile Number */
