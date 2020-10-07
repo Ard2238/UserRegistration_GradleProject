@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.cg.UserRegParamTest" tests="21" skipped="0" failures="0" errors="0" timestamp="2020-10-07T06:34:53" hostname="DESKTOP-A3NGCO2" time="0.077">
+  <properties/>
+  <testcase name="testEmailSamples[0]" classname="com.cg.UserRegParamTest" time="0.012"/>
+  <testcase name="testEmailSamples[1]" classname="com.cg.UserRegParamTest" time="0.0"/>
+  <testcase name="testEmailSamples[2]" classname="com.cg.UserRegParamTest" time="0.001"/>
+  <testcase name="testEmailSamples[3]" classname="com.cg.UserRegParamTest" time="0.001"/>
+  <testcase name="testEmailSamples[4]" classname="com.cg.UserRegParamTest" time="0.001"/>
+  <testcase name="testEmailSamples[5]" classname="com.cg.UserRegParamTest" time="0.0"/>
+  <testcase name="testEmailSamples[6]" classname="com.cg.UserRegParamTest" time="0.0"/>
+  <testcase name="testEmailSamples[7]" classname="com.cg.UserRegParamTest" time="0.001"/>
+  <testcase name="testEmailSamples[8]" classname="com.cg.UserRegParamTest" time="0.0"/>
+  <testcase name="testEmailSamples[9]" classname="com.cg.UserRegParamTest" time="0.006"/>
+  <testcase name="testEmailSamples[10]" classname="com.cg.UserRegParamTest" time="0.0"/>
+  <testcase name="testEmailSamples[11]" classname="com.cg.UserRegParamTest" time="0.001"/>
+  <testcase name="testEmailSamples[12]" classname="com.cg.UserRegParamTest" time="0.0"/>
+  <testcase name="testEmailSamples[13]" classname="com.cg.UserRegParamTest" time="0.0"/>
+  <testcase name="testEmailSamples[14]" classname="com.cg.UserRegParamTest" time="0.003"/>
+  <testcase name="testEmailSamples[15]" classname="com.cg.UserRegParamTest" time="0.017"/>
+  <testcase name="testEmailSamples[16]" classname="com.cg.UserRegParamTest" time="0.002"/>
+  <testcase name="testEmailSamples[17]" classname="com.cg.UserRegParamTest" time="0.002"/>
+  <testcase name="testEmailSamples[18]" classname="com.cg.UserRegParamTest" time="0.002"/>
+  <testcase name="testEmailSamples[19]" classname="com.cg.UserRegParamTest" time="0.002"/>
+  <testcase name="testEmailSamples[20]" classname="com.cg.UserRegParamTest" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

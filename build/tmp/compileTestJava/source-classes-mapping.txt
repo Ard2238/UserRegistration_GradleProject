@@ -1,0 +1,4 @@
+com/cg/UserRegTest.java
+ com.cg.UserRegTest
+com/cg/UserRegParamTest.java
+ com.cg.UserRegParamTest
